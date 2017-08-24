@@ -214,4 +214,4 @@ econChart = econChart + ggtitle("Top 10 US Storm Events causing Economic Consequ
 
 econChart
 ```
-*** INSERT CHART ***
+![Chart 2](https://github.com/vikrambiswas/Reproducible-Research-Project-2/blob/master/econChart-1.png)
