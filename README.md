@@ -37,6 +37,7 @@ colnames(stormDT)
 ```
 
 Data Subsetting
+```
 # Finding columns to remove
 cols2Remove <- colnames(stormDT[, !c("EVTYPE"
   , "FATALITIES"
@@ -58,6 +59,7 @@ stormDT <- stormDT[(EVTYPE != "?" &
                                                                             , "PROPDMGEXP"
                                                                             , "CROPDMG"
                                                                             , "CROPDMGEXP") ]
+                                                                            ```
                                                                             
 Converting Exponent Columns into Actual Exponents instead of (-,+, H, K, etc)
 ```
