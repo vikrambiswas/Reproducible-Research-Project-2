@@ -178,7 +178,7 @@ healthChart = healthChart + ggtitle("Top 10 US Killers") + theme(plot.title = el
 
 healthChart
 ```
-*** CHART ***
+![Chart 1](https://github.com/vikrambiswas/Reproducible-Research-Project-2/blob/master/healthChart-1.png)
 
 Events that have the Greatest Economic Consequences
 ```
