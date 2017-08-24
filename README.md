@@ -180,3 +180,38 @@ healthChart
 ```
 *** CHART ***
 
+Events that have the Greatest Economic Consequences
+```
+econ_consequences <- melt(totalCostDT, id.vars="EVTYPE", variable.name = "Damage_Type")
+head(econ_consequences, 5)
+```
+```
+##               EVTYPE Damage_Type        value
+## 1:             FLOOD    propCost 144657709807
+## 2: HURRICANE/TYPHOON    propCost  69305840000
+## 3:           TORNADO    propCost  56947380676
+## 4:       STORM SURGE    propCost  43323536000
+## 5:              HAIL    propCost  15735267513
+```
+```
+# Create chart
+econChart <- ggplot(econ_consequences, aes(x=reorder(EVTYPE, -value), y=value))
+
+# Plot data as bar chart
+econChart = econChart + geom_bar(stat="identity", aes(fill=Damage_Type), position="dodge")
+
+# Format y-axis scale and set y-axis label
+econChart = econChart + ylab("Cost (dollars)") 
+
+# Set x-axis label
+econChart = econChart + xlab("Event Type") 
+
+# Rotate x-axis tick labels 
+econChart = econChart + theme(axis.text.x = element_text(angle=45, hjust=1))
+
+# Set chart title and center it
+econChart = econChart + ggtitle("Top 10 US Storm Events causing Economic Consequences") + theme(plot.title = element_text(hjust = 0.5))
+
+econChart
+```
+*** INSERT CHART ***
