@@ -59,9 +59,10 @@ stormDT <- stormDT[(EVTYPE != "?" &
                                                                             , "PROPDMGEXP"
                                                                             , "CROPDMG"
                                                                             , "CROPDMGEXP") ]
-                                                                            ```
+```
                                                                             
 Converting Exponent Columns into Actual Exponents instead of (-,+, H, K, etc)
+
 ```
 # Change all damage exponents to uppercase.
 cols <- c("PROPDMGEXP", "CROPDMGEXP")
