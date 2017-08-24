@@ -157,3 +157,26 @@ head(bad_stuff, 5)
 ## 4:           HEAT FATALITIES   937
 ## 5:      LIGHTNING FATALITIES   816
 ```
+```
+# Create chart
+healthChart <- ggplot(bad_stuff, aes(x=reorder(EVTYPE, -value), y=value))
+
+# Plot data as bar chart
+healthChart = healthChart + geom_bar(stat="identity", aes(fill=bad_thing), position="dodge")
+
+# Format y-axis scale and set y-axis label
+healthChart = healthChart + ylab("Frequency Count") 
+
+# Set x-axis label
+healthChart = healthChart + xlab("Event Type") 
+
+# Rotate x-axis tick labels 
+healthChart = healthChart + theme(axis.text.x = element_text(angle=45, hjust=1))
+
+# Set chart title and center it
+healthChart = healthChart + ggtitle("Top 10 US Killers") + theme(plot.title = element_text(hjust = 0.5))
+
+healthChart
+```
+*** CHART ***
+
